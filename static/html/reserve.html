@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:3000/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -23,8 +23,8 @@
             <h2>Make Your Reservation</h2>
         </div>
         <div></div>
-        <a href="/view"><button type="button" class="btn btn-primary"><span><i class="fa fa-th-list"></i> View Tables</span></button></a>
-        <a href="/"><button type="button" class="btn btn-light"><span><i class="fa fa-home"></i></span></button></a>
+        <button type="button" class="btn btn-primary"><span><i class="fa fa-th-list"></i> View Tables</span></button>
+        <button type="button" class="btn btn-light"><span><i class="fa fa-home"></i></span></button>
 
     </div>
     <div class="container">
@@ -37,29 +37,29 @@
                         Table Reservations
                     </div>
                     <div class="card-body">
-                        <form method="POST" role="form">
+                        <form>
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="">
-                                <!-- <span id="nameError" class="errorHide">This field is required</span>
-                                <span id="trainNameErrorDuplicate" class="errorHide">Train is already in table</span> -->
+                                <label for="trainName">Name</label>
+                                <input type="text" class="form-control" id="trainName" placeholder="">
+                                <span id="trainNameError" class="errorHide">This field is required</span>
+                                <span id="trainNameErrorDuplicate" class="errorHide">Train is already in table</span>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="text" class="form-control" id="phone" placeholder=""> //
+                                <label for="destination">Phone Number</label>
+                                <input type="text" class="form-control" id="destination" placeholder="">
                                 <span id="destinationError" class="errorHide">This field is required</span>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="">
-                                <!-- <span id="firstArrivalError" class="errorHide">This field is required</span>
-                                <span id="firstArrivalTimeError" class="errorHide">Must be military time, example: 11:15 or 23:10</span> -->
+                                <label for="firstArrival">Email</label>
+                                <input type="text" class="form-control" id="firstArrival" placeholder="">
+                                <span id="firstArrivalError" class="errorHide">This field is required</span>
+                                <span id="firstArrivalTimeError" class="errorHide">Must be military time, example: 11:15 or 23:10</span>
                             </div>
                             <div class="form-group">
-                                <label for="uniqueid">Unique ID</label>
-                                <input type="text" class="form-control" id="uniqueid" placeholder="">
-                                <!-- <span id="frequencyMinutesError" class="errorHide">This field is required</span>
-                                <span id="frequencyMinutesIntegerError" class="errorHide">Must be a positive number</span> -->
+                                <label for="frequencyMinutes">Unique ID</label>
+                                <input type="text" class="form-control" id="frequencyMinutes" placeholder="">
+                                <span id="frequencyMinutesError" class="errorHide">This field is required</span>
+                                <span id="frequencyMinutesIntegerError" class="errorHide">Must be a positive number</span>
                             </div>
                             <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
 
@@ -78,26 +78,9 @@
         </div>
     </div>
     <nav>
-        <a href="/api/reservations">API Table Link</a>
-        <a href="/api/waiting_list">API Wait List</a>
+        <a href="api_table.html">API Table Link</a>
+        <a href="api_wait.html">API Wait List</a>
     </nav>
 </body>
-
-<script type="text/javascript">
-    // Question: What does this code do?
-    $("#submitButton").on("click", function(event) {
-        event.preventDefault();
-        var newResevation = {
-            name: $("#name").val().trim(),
-            phone: $("#phone").val().trim(),
-            email: $("#email").val().trim(),
-            uniqueid: $("#uniqueid").val().trim()
-        };
-
-        // 
-        $.post("/api/new_reservation", newReservation)
-            .then(function(data) {});
-    });
-</script>
 
 </html>

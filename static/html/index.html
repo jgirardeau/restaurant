@@ -12,25 +12,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:3000/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid" id="jumbo">
         <div class="container">
-            <h1 class="text-center"><span><i clsass="fa fa-fire"> Hot Restaurant</i></span>
+            <h1 class="text-center"><span><i class="fa fa-fire"> Hot Restaurant</i></span>
             </h1>
             <h2>We only have 5 tables! Book your seat before they all are gone!</h2>
         </div>
         <div></div>
-        <a href="/view"><button type="button" class="btn btn-primary"><span><i class="fa fa-th-list"></i>View Tables</span></button></a>
-        <a href="/reserve"><button type="button" class="btn btn-danger"><span><i class="fa fa-heart"></i> Make Reservation</span></button></a>
+        <button type="button" class="btn btn-primary"><span><i class="fa fa-th-list"></i>View Tables</span></button>
+        <button type="button" class="btn btn-danger"><span><i class="fa fa-heart"></i> Make Reservation</span></button>
 
     </div>
 
     <nav>
-        <a href="/api/reservations">API Table Link</a>
-        <a href="/api/waiting_list">API Wait List</a>
+        <a href="api_table.html">API Table Link</a>
+        <a href="api_wait.html">API Wait List</a>
     </nav>
 </body>
 
